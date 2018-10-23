@@ -25,6 +25,7 @@ Recommendation.create(:title => "Life in Pieces", :description => "netflix show,
 Recommendation.create(:title => "Life is Beautiful", :description => "WWII flick, heartwarming and hearbreaking", :user_id => 2, :category_id => 2)
 Recommendation.create(:title => "Glass Castle", :description => "biography, growing up with weird parents", :user_id => 1, :category_id => 5)
 
+
 Comment.create(:text => "I don't want to read this!!!!", :user_id => 2, :recommendation_id => 5)
 Comment.create(:text => "soooo yummmy", :user_id => 1, :recommendation_id => 2)
 Comment.create(:text => "agreed", :user_id => 1, :recommendation_id => 4)

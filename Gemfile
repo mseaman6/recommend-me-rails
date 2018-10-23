@@ -29,6 +29,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'rack-flash3'
 gem 'require_all'
+gem 'omniauth'
+gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'dotenv-rails'
+gem 'thin'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
