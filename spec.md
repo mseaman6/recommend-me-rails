@@ -2,22 +2,27 @@
 
 Specs:
 - [x] Using Ruby on Rails for the project
-- [ ] Include at least one has_many relationship (x has_many y e.g. User has_many Recipes)
-- [ ] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
-- [ ] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
+- [x] Include at least one has_many relationship (x has_many y e.g. User has_many Recipes);
+User has_many :recommendations; has_many :comments, etc.
+- [x] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
+Comment belongs_to :commentor, etc.
+- [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
+User has_many :commented_recommendations, :through => :comments, :source => :recommendation;
+Recommendation has_many :commentors, :class_name => 'User', through: :comments
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
+Comments.text
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [ ] Include signup (how e.g. Devise)
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include signup (how e.g. Devise); new_user path
+- [x] Include login (how e.g. Devise); /login - sessions#new
+- [x] Include logout (how e.g. Devise); logout - sessions#destroy
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth); oauth - Google
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new); check on this - my form goes there - URL doesn't display
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [ ] The application is pretty DRY
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] Views use partials if appropriate; comment, recommendation, and form partials
