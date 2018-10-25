@@ -14,10 +14,6 @@ class User < ApplicationRecord
   validates :email, :uniqueness => true
 
   def self.from_omniauth(auth)
-    where(uid: auth.uid).first_or_create do |user|
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.name = auth.info.name
-    end
+    where(uid: auth.uid).first_or_create(:email => auth.info.email, :name => auth.info.name, :password => auth.uid)
   end
 end

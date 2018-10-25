@@ -1,0 +1,15 @@
+<br>
+<%= form_for @recommendation do |f| %>
+  <%= f.label :'title' %>
+  <%= f.text_field(:'title', :placeholder => "e.g., book name, restaurant name, etc.", class: "form-control") %><br>
+  <%= f.label :'description' %>
+  <%= f.text_area(:'description', :placeholder => "tell me more...", class: "form-control") %><br>
+  <label>Category: (each recommendation can only have 1 category)</label>
+  <p>Choose the applicable category: </p>
+  <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'select a category'}, { class: "form-control" } %><br><br>
+    <%= f.fields_for :category do |category_fields| %>
+       <%= category_fields.text_field(:name, :placeholder => "or create a new category", class: "form-control") %>
+    <% end %><br>
+  <br>
+  <%= f.submit "Submit Recommendation", {class: "btn btn-primary"} %>
+<% end %>

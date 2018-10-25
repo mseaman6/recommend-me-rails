@@ -1,0 +1,14 @@
+<h1> Recommendations </h1>
+<br>
+<div>
+  <% if @categories.count > 0 %>
+    <% @categories.each do |category| %>
+      <div class="category">
+
+        <h3><%= link_to category.name, category_path(category) %></h3>
+        <ul><%= render partial: 'recommendation', collection: category.recommendations %></ul>
+
+      </div>
+
+    <% end %>
+  <% end %>

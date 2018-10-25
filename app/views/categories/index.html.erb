@@ -1,0 +1,11 @@
+<h2> Categories </h2>
+
+<ul>
+<% if @categories.count > 0 %>
+      <% @categories.each do |category| %>
+        <div class="category">
+          <li><h4><%= link_to category.name, category_path(category) %></h4></li>
+        </div>
+      <% end %>
+    <% end %>
+</ul>

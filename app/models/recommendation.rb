@@ -7,4 +7,8 @@ class Recommendation < ApplicationRecord
   validates :title, :presence => true
   validates :category_id, :presence => true
 
+  #scope :authored_by(x), -> { where("user_id = ?", x) }
+  #issue with session hash not being available in the model - how to get around?
+  #scope :commented, -> { where(recommendation.comments)}
+
 end

@@ -17,5 +17,5 @@ This is a rails application to organize and share recommendations among a group
 5. "user" side of things, create new account, login, logout, etc.
 6. create nested resources - comments within recommendation - see namespaced routes lab
 7. create ActiveRecord scope method (see instructions for project)
-8. validation errors - a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.
+8. validation errors - a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.; evernote - validations notes
 9. use helper methods and partials

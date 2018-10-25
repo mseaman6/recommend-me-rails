@@ -1,0 +1,11 @@
+<h2><b><%= @category.name.upcase %></b> Recommendations</h2>
+
+<ul>
+<% if @category.recommendations.count > 0 %>
+  <div class="recommendation">
+    <ul><%= render partial: 'recommendations/recommendation', collection: @category.recommendations %></ul>
+  </div>
+<% end %>
+</ul>
+
+<%= link_to "Back to Recommendations", recommendations_path %>

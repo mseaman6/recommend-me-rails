@@ -1,0 +1,17 @@
+<h2>Recommendation</h2><br>
+
+  <p><label><b>Recommendation Title</b>: </label> <%= @recommendation.title %></p>
+  <p><label><b>Recommendation Description</b>:</label> <%= @recommendation.description %></p>
+  <p><label><b>Recommendation Category</b>:</label> <%= @recommendation.category.name %></p>
+  <p><label><b>Recommendation Author</b>:</label> <%= @recommendation.user.name %></p>
+
+  <p><%= link_to "Edit Recommendation", edit_recommendation_path(@recommendation)%></p>
+
+  <%= form_tag(recommendation_path(@recommendation), method: "delete") do %>
+    <div><%= submit_tag 'Delete Recommendation', class: "btn btn-primary" %></div>
+  <% end %>
+
+  <h3>Comments:</h3><br>
+  <%= render partial: 'comment', collection: @recommendation.comments %><br>
+
+  <%= render 'comments/form', recommendation: @recommendation %>

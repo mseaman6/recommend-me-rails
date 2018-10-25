@@ -6,16 +6,20 @@ class UsersController < ApplicationController
 
   def create
     if params[:user][:password] == params[:user][:password_confirmation]
-      @user = User.create(user_params)
-      session[:user_id] = @user.id
-      redirect_to welcome_path
+      @user = User.new(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to recommendations_path
+      end
     else
-      redirect_to signup_path
+      flash[:message] = "Your sign up was unsuccessful, please re-enter your information and try again."
+      redirect_to new_user_path
     end
   end
 
   def show
-    @user = User.find(session[:user_id])
+    require_login
+    @user = User.find(params[:id])
   end
 
   private
