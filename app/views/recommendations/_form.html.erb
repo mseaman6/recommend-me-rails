@@ -1,5 +1,15 @@
 <br>
 <%= form_for @recommendation do |f| %>
+<% if @recommendation.errors.any? %>
+  <div id="error_explanation" class="error_message">
+    <p>The recommendation failed to save. Please make sure that you complete all required fields and try again. There were <%= pluralize(@recommendation.errors.count, "error") %>: </p>
+    <ul>
+      <% @recommendation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
   <%= f.label :'title' %>
   <%= f.text_field(:'title', :placeholder => "e.g., book name, restaurant name, etc.", class: "form-control") %><br>
   <%= f.label :'description' %>

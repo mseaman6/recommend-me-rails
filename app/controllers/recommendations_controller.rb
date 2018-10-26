@@ -19,8 +19,9 @@ class RecommendationsController < ApplicationController
     if @recommendation.save
       redirect_to recommendation_path(@recommendation)
     else
-      flash[:message] = "The new recommendation failed to be created.  Please make sure that you complete all required fields and try again."
-      redirect_to new_recommendation_path
+      #flash[:message] = "The new recommendation failed to be created.  Please make sure that you complete all required fields and try again."
+      render :new
+      #redirect_to new_recommendation_path
     end
   end
 
