@@ -11,7 +11,7 @@ User has_many :commented_recommendations, :through => :comments, :source => :rec
 Recommendation has_many :commentors, :class_name => 'User', through: :comments
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
 Comments.text
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item); User, Recommendations, Category
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include signup (how e.g. Devise); new_user path
 - [x] Include login (how e.g. Devise); /login - sessions#new
@@ -19,7 +19,7 @@ Comments.text
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth); oauth - Google
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new); check on this - my form goes there - URL doesn't display
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new); recommendations form
 
 Confirm:
 - [ ] The application is pretty DRY
