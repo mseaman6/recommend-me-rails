@@ -17,11 +17,10 @@ class CommentsController < ApplicationController
     @recommendation = Recommendation.find(params[:recommendation_id])
     if session[:user_id] == @comment.user_id
       @comment = Comment.destroy(params[:id])
-      flash[:message] = "Recommendation deleted successully."
-      binding.pry
+      flash[:message] = "Comment deleted successully."
       redirect_to recommendation_path(@recommendation)
     else
-      flash[:message] = "Recommendation can only be deleted by the user that created it."
+      flash[:message] = "Comment can only be deleted by the user that created it."
       redirect_to recommendation_path(@recommendation)
     end
   end

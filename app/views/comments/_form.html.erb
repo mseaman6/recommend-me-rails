@@ -1,11 +1,7 @@
 
 
 <%= form_for [@recommendation, @comment] do |f| %>
-<% if @comment.errors.any? %>
-  <div id="error_explanation" class="error_message">
-    <p>The comment failed to save.  The comment cannot be blank.</p>
-  </div>
-<% end %>
+<!-- validation does not appear to work here, @recommendation info not passing when rendered -->
 
   <%= f.text_field(:'text', :placeholder => "do you have thoughts...?", class: "form-control") %><br>
 
