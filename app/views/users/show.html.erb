@@ -1,7 +1,7 @@
 <h2><b><%= @user.name.upcase %>'s</b> Recommendations</h2><br>
 
   <% if @user.categories.count > 0 %>
-    <% @user.categories.each do |category| %>
+    <% @user.categories.uniq.each do |category| %>
       <div class="category">
         <h3><%= link_to category.name, category_path(category) %></h3>
         <ul><%= render partial: 'recommendations/recommendation', collection: category.recommendations.where(user_id: @user.id) %></ul>
