@@ -18,11 +18,11 @@ Comments.text
 - [x] Include logout (how e.g. Devise); logout - sessions#destroy
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth); oauth - Google
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new); check on this - my form goes there - URL doesn't display: recommendations/1/comments/new
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new);  recommendations/1/comments/new - creates new comment
 - [x] Include form display of validation errors (form URL e.g. /recipes/new); recommendations form
 
 Confirm:
-- [ ] The application is pretty DRY
+- [x] The application is pretty DRY
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate; recommendation form edit and delete buttons use helper methods to view
 - [x] Views use partials if appropriate; comment, recommendation, and form partials
