@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback' => 'sessions#create'
   get '/auth/failure', to: redirect('/')
   delete '/logout' => 'sessions#destroy'
+  get '/recommendations/recent' => 'recommendations#recent'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

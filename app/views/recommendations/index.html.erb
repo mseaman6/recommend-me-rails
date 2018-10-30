@@ -1,18 +1,13 @@
 <h1> Recommendations </h1>
 <br>
-<div>
-  <% if @categories %>
-    <% @categories.each do |category| %>
-      <div class="category">
-
+  <% if @recommendations %>
+    <% @categories =  @recommendations.collect {|rec| rec.category} %>
+    <% @categories.uniq.each do |category| %>
+        <div class="category">
         <h3><%= link_to category.name, category_path(category) %></h3>
-        <ul><%= render partial: 'recommendation', collection: category.recommendations %></ul>
+
+        <ul><%= render partial: 'recommendation', collection: @recommendations.where('category_id = ?', category.id)  %></ul>
 
       </div>
     <% end %>
-  <% elsif @category %>
-    <div class="category">
-      <h3><%= link_to @category.name, category_path(@category) %></h3>
-      <ul><%= render partial: 'recommendation', collection: @category.recommendations %></ul>
-    </div>
   <% end %>

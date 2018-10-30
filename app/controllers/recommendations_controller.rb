@@ -3,9 +3,9 @@ class RecommendationsController < ApplicationController
 
   def index
     if params[:category_id]
-      @category = Category.find(params[:category_id])
+      @recommendations = Recommendation.where("category_id = ?", (params[:category_id]))
     else
-      @categories = Category.all
+      @recommendations = Recommendation.all
     end
   end
 
