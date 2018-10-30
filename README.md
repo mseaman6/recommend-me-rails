@@ -22,9 +22,9 @@ would recommendations/1/comments count?
 • You must include a nested new route with form that relates to the parent resource;
 would recommendations/1/comments(new) count?
 
-7. create ActiveRecord scope method (see instructions for project); still need
+7. create ActiveRecord scope method (see instructions for project); done
 
-8. validation errors - a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.; evernote - validations notes; make the fields show errors - use fields_with_errors class
+8. validation errors - a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.; done
 
 9. use helper methods and partials; perhaps use some of the helper methods within the views; done
 10. testing

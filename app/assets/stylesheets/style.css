@@ -26,8 +26,14 @@ img, video, audio, iframe, table form {
   color: red;
 }
 
-.fields_with_errors {
-  border: 1px solid #c51244;
-  background: #fff0f4;
-  color: #c51244;
+.field_with_errors {
+  color: red;
+}
+
+.field_with_errors input {
+  background-color: #ffa7a1;
+}
+
+.field_with_errors select {
+  background-color: #ffa7a1;
 }
