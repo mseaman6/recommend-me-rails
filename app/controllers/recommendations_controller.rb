@@ -2,7 +2,11 @@ class RecommendationsController < ApplicationController
   before_action :require_login
 
   def index
-    @categories = Category.all
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+    else
+      @categories = Category.all
+    end
   end
 
   def new

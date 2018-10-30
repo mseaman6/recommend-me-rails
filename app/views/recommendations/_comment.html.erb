@@ -4,7 +4,6 @@
     <li>
       <%= link_to comment.commentor.name, user_path(comment.commentor) %> says "<%= comment.text %>"
       <% if current_user.id == comment.user_id %>
-        <!-- to figure out why recommendation_id and comment_id are transposed -->
         <%= form_tag(recommendation_comment_path(@recommendation, comment), method: "delete") do %>
           <div><%= submit_tag 'Delete Comment' %></div>
         <% end %>

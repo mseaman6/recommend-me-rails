@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :recommendations do
     resources :comments
   end
-  resources :users
+  resources :users do
+    resources :comments, only: [:index]
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
