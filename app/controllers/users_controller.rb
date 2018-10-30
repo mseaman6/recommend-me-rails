@@ -10,6 +10,9 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         redirect_to recommendations_path
+      else
+        flash[:message] = "Your sign up was unsuccessful, please re-enter your information and try again."
+        redirect_to new_user_path
       end
     else
       flash[:message] = "Your sign up was unsuccessful, please re-enter your information and try again."

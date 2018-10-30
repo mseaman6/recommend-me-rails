@@ -24,5 +24,5 @@ Comments.text
 Confirm:
 - [ ] The application is pretty DRY
 - [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
+- [x] Views use helper methods if appropriate; recommendation form edit and delete buttons use helper methods to view
 - [x] Views use partials if appropriate; comment, recommendation, and form partials
