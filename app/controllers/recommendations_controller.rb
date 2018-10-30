@@ -34,7 +34,6 @@ class RecommendationsController < ApplicationController
     else
       #flash[:message] = "The new recommendation failed to be created.  Please make sure that you complete all required fields and try again."
       render :new
-      #redirect_to new_recommendation_path
     end
   end
 
