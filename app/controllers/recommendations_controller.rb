@@ -9,6 +9,15 @@ class RecommendationsController < ApplicationController
     end
   end
 
+  def recent
+    if params[:category_id]
+      @recommendations = Recommendation.where("category_id = ?", (params[:category_id])).recent
+    else
+      @recommendations = Recommendation.recent
+    end
+    render :index
+  end
+
   def new
     @recommendation = Recommendation.new
   end
