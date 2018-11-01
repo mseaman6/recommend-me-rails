@@ -8,6 +8,7 @@ class Recommendation < ApplicationRecord
   validates :category_id, :presence => true
 
   scope :recent, -> {where("created_at >= ?", (Time.now - 1.day))}
+  scope :title_a_z, -> {order(:title)}
   #scope :authored_by(x), -> { where("user_id = ?", x) }
   #issue with session hash not being available in the model - how to get around?
 

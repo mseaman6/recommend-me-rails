@@ -1,0 +1,5 @@
+<h1> Recommendations (alphabetically)</h1>
+<br>
+  <% if @recommendations %>
+      <ul><%= render partial: 'recommendation', collection: @recommendations  %></ul>
+  <% end %>

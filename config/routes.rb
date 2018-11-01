@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get '/recommendations/recent' => 'recommendations#recent'
+  get '/recommendations/alphabetical' => 'recommendations#alphabetical'
 
   resources :recommendations do
     resources :comments

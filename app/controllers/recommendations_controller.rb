@@ -18,6 +18,11 @@ class RecommendationsController < ApplicationController
     render :index
   end
 
+  def alphabetical
+    @recommendations = Recommendation.title_a_z
+    render :list
+  end
+
   def new
     @recommendation = Recommendation.new
   end
