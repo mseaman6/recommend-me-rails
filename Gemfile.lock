@@ -47,15 +47,15 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (9.2.0)
+    autoprefixer-rails (9.5.1.1)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.9.0)
@@ -194,6 +194,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.0.1)
+      ffi (~> 1.9)
+      rake
     selenium-webdriver (3.14.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -241,7 +244,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
-  bootstrap-sass (= 3.3.7)
+  bootstrap-sass (>= 3.4.1)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
@@ -254,7 +257,7 @@ DEPENDENCIES
   pry
   puma (~> 3.11)
   rack-flash3
-  rails (~> 5.2.1)
+  rails (~> 5.2.3)
   require_all
   sass-rails (~> 5.0)
   selenium-webdriver
